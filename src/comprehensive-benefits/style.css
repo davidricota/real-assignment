@@ -1,0 +1,72 @@
+.wp-block-realassignment-comprehensive-benefits {
+  background: white;
+  padding: 3rem 1.25rem;
+}
+@media (min-width: 768px) {
+  .wp-block-realassignment-comprehensive-benefits {
+    padding: 7.5rem 9.25rem;
+  }
+}
+
+.comprehensive-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--wp--preset--spacing--60);
+  margin-top: var(--wp--preset--spacing--40);
+}
+
+.benefit-item {
+  border: 1px solid var(--wp--preset--color--gray);
+  border-radius: 8px;
+  padding: var(--wp--preset--spacing--50);
+  background: var(--wp--preset--color--true-white);
+  box-shadow: var(--wp--preset--shadow--natural);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--wp--preset--shadow--deep);
+}
+
+.benefit-image {
+  margin-bottom: var(--wp--preset--spacing--40);
+  text-align: center;
+}
+
+.benefit-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: var(--wp--preset--shadow--natural);
+}
+
+.benefit-content {
+  text-align: center;
+}
+
+.benefit-title {
+  margin: 0 0 var(--wp--preset--spacing--20) 0;
+  color: var(--wp--preset--color--cobalt);
+  font-size: var(--wp--preset--font-size--22);
+  font-weight: 400;
+  font-family: var(--wp--preset--font-family--pp-telegraf);
+  line-height: 1.2;
+}
+
+.benefit-description {
+  color: var(--wp--preset--color--cobalt);
+  line-height: 1.6;
+  margin: 0;
+  font-family: "Inter", var(--wp--preset--font-family--inter);
+}
+
+.benefit-description p {
+  margin: 0 0 var(--wp--preset--spacing--20) 0;
+}
+
+.benefit-description p:last-child {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=style.css.map */

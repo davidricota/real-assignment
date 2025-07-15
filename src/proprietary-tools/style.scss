@@ -1,0 +1,290 @@
+// Proprietary Tools Block - Tabs System
+// Using BEM methodology with proper nesting
+
+.proprietary-tools {
+    padding: 0.625rem;
+    transition: all 2s cubic-bezier(0.235, 0.615, 0.185, 0.995);
+    &__title {
+        margin: 0;
+        font-family: Inter, sans-serif;
+        font-size: 1.0625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+    }
+    // Main container
+    &__container {
+        padding: 3rem 1.25rem;
+        background: white;
+        max-width: 90rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        @media (min-width: 768px) {
+            padding: 7.5rem 9.25rem;
+            margin: 0 auto;
+        }
+    }
+
+    // Tabs wrapper - CSS Grid for reordering
+    &__tabs {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.875rem;
+
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+    }
+
+    // Tabs navigation
+    &__tabs-heading {
+        display: none;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-basis: initial;
+            flex-direction: row;
+            flex-shrink: 0;
+            flex-wrap: wrap;
+            gap: 1.625rem;
+            justify-content: flex-start;
+            overflow-x: initial;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    }
+
+    // Individual tab title
+    &__tab-title {
+        text-align: left;
+        @media (min-width: 768px) {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            color: #a1a1a1;
+            transition: all 250ms;
+            // Hover state
+            &::-moz-focus-inner {
+                border: 0;
+                padding: 0;
+            }
+            &:hover,
+            &--hover {
+                color: #000;
+            }
+
+            // Active state
+            &--active {
+                color: #000;
+            }
+
+            // Focus state for accessibility
+            &:focus {
+                color: #000;
+            }
+            &:hover {
+                & + .proprietary-tools__tabs-content .proprietary-tools__tab-content {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    // Tab title text
+    &__tab-title-text {
+        @media (min-width: 768px) {
+            font-family: Telegraf, sans-serif;
+            font-weight: 400;
+            line-height: 1;
+            font-size: 4.8125rem;
+        }
+    }
+
+    // Tabs content container
+    &__tabs-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.875rem;
+        @media (min-width: 768px) {
+            gap: 1.25rem;
+        }
+    }
+
+    // Individual tab content
+    &__tab-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.875rem;
+
+        transition:
+            opacity 0.5s ease,
+            // Active state
+            &--active {
+            display: block;
+            opacity: 1;
+        }
+        &::before {
+            content: attr(data-title);
+            display: block;
+            font-family: Telegraf, sans-serif;
+            font-weight: 400;
+            line-height: 1;
+            font-size: 2rem;
+            cursor: pointer;
+            position: relative;
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+
+        // Collapsed state (hidden content)
+        &--collapsed {
+            .proprietary-tools__tab-inner {
+                display: none;
+            }
+        }
+        &--active {
+            .proprietary-tools__tab-inner {
+                display: grid;
+            }
+        }
+        @media (min-width: 768px) {
+            display: none;
+            opacity: 0;
+        }
+    }
+
+    // Tab content inner wrapper
+    &__tab-inner {
+        display: grid;
+        grid-template-columns: 1fr; // Stack vertically on mobile
+        gap: 20px;
+        min-height: auto;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            align-items: center;
+            min-height: 400px;
+        }
+    }
+
+    // Text content area
+    &__tab-text {
+        padding: 20px 0;
+    }
+
+    // Tab description
+    &__tab-description {
+        font-family: Inter, sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 2;
+        color: #a1a1a1;
+        p {
+            margin: 0 0 20px 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Image container
+    &__tab-image {
+        text-align: center;
+    }
+    &__image-wrapper {
+        width: 100%;
+        aspect-ratio: 2 / 3; /* ancho / alto */
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* o "contain" si querés ver toda la imagen */
+            display: block;
+        }
+    }
+
+    // Placeholder for empty state
+    &__placeholder {
+        text-align: center;
+        padding: 60px 20px;
+        color: #666;
+        font-style: italic;
+    }
+}
+
+// Desktop styles (768px and up) - Tabs layout with hover
+@media (min-width: 768px) {
+    .proprietary-tools {
+        &__tab-content {
+            // Hide all content except active
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+
+            &--active {
+                display: block;
+                opacity: 1;
+            }
+        }
+
+        &__tab-inner {
+            grid-template-columns: 1fr 1fr; // Text and image side by side
+            gap: 40px;
+        }
+
+        // Hover effect to show tabs on hover
+        &__tab-title {
+            &:hover {
+                & + .proprietary-tools__tabs-content .proprietary-tools__tab-content {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Mobile styles (below 768px) - Accordion layout with collapse
+@media (max-width: 767px) {
+    .proprietary-tools {
+        &__tabs-heading {
+            display: none; // Hide tabs navigation on mobile
+        }
+
+        &__tab-text {
+            padding: 0;
+        }
+    }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+    .proprietary-tools {
+        &__tab-title,
+        &__tab-content,
+        &__tab-image img {
+            transition: none;
+        }
+    }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+    .proprietary-tools {
+        &__tab-title {
+            border: 2px solid currentColor;
+
+            &--active {
+                border-color: #000;
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "realassignment/comprehensive-benefits",
+    "version": "1.0.0",
+    "title": "Comprehensive Benefits",
+    "category": "widgets",
+    "icon": "awards",
+    "description": "Block for Comprehensive Benefits with repeater functionality.",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "content": {
+            "type": "string",
+            "default": ""
+        },
+        "benefits": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "real-assignment",
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css",
+    "save": "file:./save.js"
+}

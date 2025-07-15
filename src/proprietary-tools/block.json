@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "realassignment/proprietary-tools",
+    "version": "1.0.0",
+    "title": "Proprietary Tools",
+    "category": "widgets",
+    "icon": "admin-tools",
+    "description": "Block for Proprietary Tools with repeater functionality.",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "tools": {
+            "type": "array",
+            "default": []
+        }
+    },
+    "textdomain": "real-assignment",
+    "editorScript": "file:./index.js",
+    "viewScript": "file:./view.js",
+    "style": "file:./style.css",
+    "save": "file:./save.js"
+}

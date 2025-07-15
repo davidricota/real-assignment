@@ -1,0 +1,52 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "realassignment/legacy",
+    "version": "1.0.0",
+    "title": "Legacy",
+    "category": "widgets",
+    "icon": "archive",
+    "description": "Block for Legacy with image and tier repeater functionality.",
+    "supports": {
+        "html": false
+    },
+    "attributes": {
+        "title": {
+            "type": "string",
+            "default": ""
+        },
+        "subtitle": {
+            "type": "string",
+            "default": ""
+        },
+        "imageUrl": {
+            "type": "string",
+            "default": ""
+        },
+        "imageId": {
+            "type": "number",
+            "default": null
+        },
+        "imageCaption": {
+            "type": "string",
+            "default": ""
+        },
+        "tiers": {
+            "type": "array",
+            "default": []
+        },
+        "subcontentTitle": {
+            "type": "string",
+            "default": ""
+        },
+        "subcontent": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "textdomain": "real-assignment",
+    "editorScript": "file:./index.js",
+    "viewScript": "file:./view.js",
+    "style": "file:./style.css",
+    "save": "file:./save.js"
+}

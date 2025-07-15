@@ -1,0 +1,106 @@
+.comprehensive-benefits {
+    padding: 0.625rem;
+    &__title {
+        margin: 0;
+        font-family: Inter, sans-serif;
+        font-size: 1.0625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+    }
+    &__container {
+        padding: 3rem 1.25rem;
+
+        max-width: 90rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        @media (min-width: 768px) {
+            padding: 7.5rem 6.25rem;
+            margin: 0 auto;
+        }
+    }
+    &__content {
+        margin: 0;
+        color: #0f0e1270;
+        font-size: 2.375rem;
+        line-height: 3rem;
+        @media (min-width: 768px) {
+            font-family: Telegraf, sans-serif;
+            font-weight: 400;
+            line-height: 1;
+            font-size: 4.8125rem;
+            text-align: left;
+        }
+        span {
+            color: #000;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        .comprehensive-benefit {
+            &__item {
+                display: flex;
+                flex-direction: column;
+                gap: 1.25rem;
+                border: solid #a1a1a1;
+                border-width: 0.125rem 0 0 0;
+                padding: 3.125rem 0;
+                justify-content: flex-start;
+                color: #a1a1a1;
+                &:hover {
+                    color: #000;
+                    border-color: #000;
+                    a {
+                        color: #000;
+                    }
+                }
+                &:last-child {
+                    border-width: 0.125rem 0;
+                }
+                @media (min-width: 768px) {
+                    flex-direction: row;
+                    gap: 5.625rem;
+                    border: solid #a1a1a1;
+                    border-width: 0.125rem 0 0 0;
+                    padding: 3.125rem 0;
+                }
+            }
+            &__title {
+                margin: 0;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                font-size: 1.1875rem;
+                font-weight: 500;
+                @media (min-width: 768px) {
+                    font-size: 1.5625rem;
+                }
+                span {
+                    font-weight: bolder;
+                }
+            }
+            &__content {
+                @media (min-width: 768px) {
+                    width: 60%;
+                    font-size: 0.9375rem;
+                    @media (min-width: 768px) {
+                        font-size: 1rem;
+                    }
+                }
+                a {
+                    color: #c36;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__placeholder {
+        text-align: center;
+        padding: 60px 20px;
+        color: #666;
+        font-style: italic;
+    }
+}
