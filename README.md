@@ -56,4 +56,3 @@ All commands are run from the plugin root directory:
 
 ---
 
-Made with ❤️ for WordPress technical challenges. 
