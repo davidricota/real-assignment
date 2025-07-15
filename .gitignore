@@ -33,5 +33,4 @@ yarn.lock
 pnpm-lock.yaml
 
 # Otros archivos de desarrollo
-*.sh
-*.md 
+*.sh 
